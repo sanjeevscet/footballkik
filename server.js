@@ -15,7 +15,7 @@ const passport = require('passport');
 const container = require('./container');
 
 
-container.resolve(function(users){
+container.resolve(function(users, _){
     
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/footballkik');
@@ -57,5 +57,8 @@ container.resolve(function(users){
         app.use(flash());
         app.use(passport.initialize());
         app.use(passport.session());
+        
+        app.locals._ = _;
+        
     }
 })

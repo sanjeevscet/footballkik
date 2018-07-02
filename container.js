@@ -15,6 +15,7 @@ simpleDependecies.forEach(function(val){
 
 
 container.load(path.join(__dirname, '/controllers'));
+container.load(path.join(__dirname, '/helpers'));
 
 container.register('container', function(){
      return container;
